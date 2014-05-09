@@ -1,5 +1,5 @@
-""" fourch (stylised as 4ch) is an easy-to-implement Python wrapper for
-    4chan's JSON API, as provided by moot.
+""" luppy is an easy-to-implement Python wrapper for
+    lupchan's 4chan-style JSON API, as provided by nanasi.
 
     It uses the documentation of the 4chan API located at: https://github.com/4chan/4chan-API
     
@@ -8,7 +8,7 @@
 """
 from ._version import __version__
 
-from .fourch import *
+from .luppy import *
 
 from .thread import thread as thread
 from .board import board as board
