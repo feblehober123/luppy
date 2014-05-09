@@ -13,3 +13,4 @@ from .luppy import *
 from .thread import thread as thread
 from .board import board as board
 from .reply import reply as reply
+from .post import post as post  #this will be a posting function in the future
