@@ -43,5 +43,5 @@ def post(board=None, thread=None, name=None, email=None, subject=None, body=None
     if embed:
         post_data['embed'] = embed
     #add more as I convince nanasi to enable things, especially upload from url
-    r = request.post(post_url, data=post_data)
+    r = request.post(fourch.urls['post'], data=post_data)
     #validate response? nah.
