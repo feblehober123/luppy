@@ -12,6 +12,8 @@ urls = {
     "api_thread": "/{board}/res/{thread}.json",
     "api_threads": "/{board}/threads.json",
     "api_catalog": "/{board}/catalog.json"  #not sure if this works, I'll just leave it
+    
+    "post": "/post.php"
 }
 
 
