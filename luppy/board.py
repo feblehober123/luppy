@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import requests
-import fourch
+import luppy
 from .thread import thread
 
 
 class board(object):
-    """ fourch.board is the master instance which allows easy access to the creation
+    """ luppy.board is the master instance which allows easy access to the creation
         of thread objects.
     """
 
@@ -21,10 +21,10 @@ class board(object):
         """
         self.name = name
         self.https = https
-        self._urls = urls or fourch.urls
+        self._urls = urls or luppy.urls
         self._session = requests.Session()
-        self._session.headers.update({"User-Agent": "fourch/{0} (@https://github.com/plausibility/4ch)".format(fourch.__version__)})
-        self._cache = {}  # id: fourch.thread, this stores prefetched threads
+        self._session.headers.update({"User-Agent": "luppy/{0} (@https://github.com/plausibility/luppy)".format(luppy.__version__)})
+        self._cache = {}  # id: luppy.thread, this stores prefetched threads
 
     @property
     def _base_url(self):
@@ -58,15 +58,15 @@ class board(object):
         return r.json()
 
     def thread(self, res, update_cache=True):
-        """ Create a :class:`fourch.thread` object.
+        """ Create a :class:`luppy.thread` object.
             If the thread has already been fetched, return the cached thread.
 
             :param res: the thread number to fetch
             :type res: str or int
             :param update_cache: should we update if it's cached?
             :type update_cache: bool
-            :return: the :class:`fourch.thread` object
-            :rtype: :class:`fourch.thread` or None
+            :return: the :class:`luppy.thread` object
+            :rtype: :class:`luppy.thread` or None
         """
         if res in self._cache:
             t = self._cache[res]
@@ -92,7 +92,7 @@ class board(object):
             :type page: int
             :param update_each: should each thread be updated, to pull all replies
             :type update_each: bool
-            :return: a list of :class:`fourch.thread` objects, corresponding to all threads on given page
+            :return: a list of :class:`luppy.thread` objects, corresponding to all threads on given page
             :rtype: list
         """
         url = self._base_url + self._urls["api_board"].format(board=self.name, page=page)

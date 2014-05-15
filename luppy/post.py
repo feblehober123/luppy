@@ -6,9 +6,9 @@ import base64
 def post(board=None, thread=None, name=None, email=None, subject=None, body=None, file=None, spoiler_image=None, embed=None):
     if (len(name) > 35):
         raise ValueError('Name longer than max of 35 chars.')
-    if len(email) > 40):
+    if (len(email) > 40):
         raise ValueError('Email longer than max of 40 chars.')
-    if len(subject) > 100):
+    if (len(subject) > 100):
         raise ValueError('Subject longer than max of 100 chars.')
     if type(spoiler_image) != bool:
         raise ValueError('spoiler_image must be type bool.')
@@ -43,5 +43,5 @@ def post(board=None, thread=None, name=None, email=None, subject=None, body=None
     if embed:
         post_data['embed'] = embed
     #add more as I convince nanasi to enable things, especially upload from url
-    r = request.post(fourch.urls['post'], data=post_data)
+    r = request.post(luppy.urls['post'], data=post_data)
     #validate response? nah.

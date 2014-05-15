@@ -1,7 +1,7 @@
-Welcome to 4ch's documentation!
+Welcome to luppy's documentation!
 ===============================
 
-.. automodule:: fourch
+.. automodule:: luppy
 
 Contents
 --------

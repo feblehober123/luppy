@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# 4ch documentation build configuration file, created by
+# luppy documentation build configuration file, created by
 # sphinx-quickstart on Sat Jan 26 17:51:19 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'4ch'
+project = u'luppy'
 copyright = u'2013, plausibility'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '4chdoc'
+htmlhelp_basename = 'luppydoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', '4ch.tex', u'4ch Documentation',
+  ('index', 'luppy.tex', u'luppy Documentation',
    u'plausibility', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', '4ch', u'4ch Documentation',
+    ('index', 'luppy', u'luppy Documentation',
      [u'plausibility'], 1)
 ]
 
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', '4ch', u'4ch Documentation',
-   u'plausibility', '4ch', 'One line description of project.',
+  ('index', 'luppy', u'luppy Documentation',
+   u'plausibility', 'luppy', 'One line description of project.',
    'Miscellaneous'),
 ]
 

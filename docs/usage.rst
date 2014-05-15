@@ -1,12 +1,12 @@
 Usage
 =====
 
-4ch is easy to use and implement, here are some examples.
+luppy is easy to use and implement, here are some examples.
 For more thorough documentation, visit the :doc:`autodoc`.
 
 Neat examples
 -------------
-Here are some examples to show you what sort of stuff you can do with 4ch.
+Here are some examples to show you what sort of stuff you can do with luppy.
 
 List all image URLs
 ^^^^^^^^^^^^^^^^^^^
@@ -16,7 +16,7 @@ You can easily access all the images in a :class:`thread` with the ``t.images`` 
 
     ## images.py
     import sys
-    import fourch
+    import luppy
 
     def main():
         # Display usage and help if they've mucked up.
@@ -24,7 +24,7 @@ You can easily access all the images in a :class:`thread` with the ``t.images`` 
             print "usage: python {0} <board> <thread>".format(sys.argv[0])
             return
 
-        b = fourch.board(sys.argv[1])
+        b = luppy.board(sys.argv[1])
         t = b.thread(sys.argv[2])
         for i in t.images:
             print i
@@ -48,14 +48,14 @@ This will simply list information about a given thread.
 
     ## thread_data.py
     import sys
-    import fourch
+    import luppy
 
     def main():
         if len(sys.argv) is not 3:
             print "usage: python {0} <board> <thread>".format(sys.argv[0])
             return
 
-        b = fourch.board(sys.argv[1])
+        b = luppy.board(sys.argv[1])
         t = b.thread(sys.argv[2])
 
         print 'Thread:\t\t', t
@@ -80,7 +80,7 @@ View all threads in a page
 .. note::
     If you set ``update_each`` to ``True``, this method can be costly -- bandwidth wise -- as well as slow, as it has to GET each thread.
 
-You can easily view all the threads on any given page of a board with the :func:`fourch.board.page` method.
+You can easily view all the threads on any given page of a board with the :func:`luppy.board.page` method.
 This method pulls in all the threads in a given page.
 
 If you want to get all the threads, as well as their replies (e.g., a full thread, not just what's shown),
@@ -90,14 +90,14 @@ you will have to set ``update_each`` to ``True`` in the method call: ``b.page(pa
     
     ## all_threads.py
     import sys
-    import fourch
+    import luppy
 
     def main():
         if len(sys.argv) is not 3:
             print "usage: python {0} <board> <page>".format(sys.argv[0])
             return
 
-        b = fourch.board(sys.argv[1])
+        b = luppy.board(sys.argv[1])
         thr = b.page(page=sys.argv[2])
 
         for t in thr:

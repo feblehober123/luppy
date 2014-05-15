@@ -6,7 +6,7 @@ from .reply import reply
 
 class thread(object):
     """ This object stores information about the given thread.
-        It has a list of fourch.replies, as well as options to
+        It has a list of luppy.replies, as well as options to
         easily pull in updates (new posts), and create an instance
         with the json of a thread.
     """
@@ -14,8 +14,8 @@ class thread(object):
     def __init__(self, board, res):
         """ Create the thread instance and initialize variables.
 
-            :param board: the :class:`fourch.board` parent instance
-            :type board: :class:`fourch.board`
+            :param board: the :class:`luppy.board` parent instance
+            :type board: :class:`luppy.board`
             :param res: the given threads number
             :type res: str or int
         """
@@ -49,8 +49,8 @@ class thread(object):
             and if it isn't 200 OK, it will raise_for_status().
             Actually creates the thread by calling :func:`from_json`.
 
-            :param board: the :class:`fourch.board` parent instance
-            :type board: :class:`fourch.board`
+            :param board: the :class:`luppy.board` parent instance
+            :type board: :class:`luppy.board`
             :param res: the given threads number
             :type res: str or int
             :param r: the requests object
@@ -67,16 +67,16 @@ class thread(object):
     def from_json(board, json, res=None, last_modified=None):
         """ Create a thread object from the given JSON data.
 
-            :param board: the :class:`fourch.board` parent instance
-            :type board: :class:`fourch.board`
+            :param board: the :class:`luppy.board` parent instance
+            :type board: :class:`luppy.board`
             :param json: the json data from the 4chan API
             :type board: dict
             :param res: the given threads number
             :type res: str or int
             :param last_modified: when was the page last modified
             :type last_modified: int or None
-            :return: the created :class:`fourch.thread`
-            :rtype: :class:`fourch.thread`
+            :return: the created :class:`luppy.thread`
+            :rtype: :class:`luppy.thread`
         """
         t = thread(board, res)
         t._last_modified = last_modified
@@ -114,11 +114,11 @@ class thread(object):
 
     @property
     def last_reply(self):
-        """ Return the last :class:`fourch.reply` to the thread, or the op
+        """ Return the last :class:`luppy.reply` to the thread, or the op
             if there are no replies.
 
-            :return: the last :class:`fourch.reply` to the thread.
-            :rtype: :class:`fourch.reply`
+            :return: the last :class:`luppy.reply` to the thread.
+            :rtype: :class:`luppy.reply`
         """
         if not self.replies:
             return self.op

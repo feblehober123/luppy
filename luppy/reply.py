@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import fourch
+import luppy
 import base64
 import re
 
@@ -14,8 +14,8 @@ class reply(object):
     def __init__(self, thread, json):
         """ Initialize the reply with the relevant information
 
-            :param thread: the :class:`fourch.thread` parent instance
-            :type thread: :class:`fourch.thread`
+            :param thread: the :class:`luppy.thread` parent instance
+            :type thread: :class:`luppy.thread`
             :param json: the json data for this post
             :type json: dict
         """
@@ -135,7 +135,7 @@ class reply(object):
     @property
     def url(self):
         """The URL of the post on the parent thread"""
-        return "{0}{1}/{2}/res/{3}#p{4}".format(
+        return "{0}{1}/{2}/res/{3}.html#{4}".format(
             self._thread._board._proto,
             self._thread._board._urls["boards"],
             self._thread._board.name,
@@ -177,7 +177,7 @@ class reply(object):
             :return: a struct with information related to image
         """
         if not self.has_file:
-            return fourch.struct()
+            return luppy.struct()
         f = {
             "renamed": self._json.get("tim", 0),
             "name": self._json.get("filename", ""),
@@ -194,17 +194,17 @@ class reply(object):
             "url": "",
             "thumb_url": ""
         }
-        f["url"] = "{0}{1}/{2}/{3}{4}".format(
+        f["url"] = "{0}{1}/{2}/src/{3}{4}".format(
             self._thread._board._proto,
-            fourch.urls["images"],
+            luppy.urls["images"],
             self._thread._board.name,
             f["renamed"],
             f["extension"]
         )
-        f["thumb_url"] = "{0}{1}/{2}/{3}s.jpg".format(
+        f["thumb_url"] = "{0}{1}/{2}/src/{3}.png".format(
             self._thread._board._proto,
-            fourch.urls["thumbs"],
+            luppy.urls["thumbs"],
             self._thread._board.name,
             f["renamed"]
         )
-        return fourch.struct(**f)
+        return luppy.struct(**f)
