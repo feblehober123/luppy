@@ -1,6 +1,7 @@
 luppy
 ======
-
+LOL DAE REMEMBER WHEN THIS WAS GOING TO BE A THING MAYBE YA COULD'VE ENABLED THE API NANASI
+--
 .. _docs: https://4ch.readthedocs.org
 .. _repo: https://github.com/plausibility/4ch
 
