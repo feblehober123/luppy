@@ -24,8 +24,8 @@ class Recent():
         return new
 
     def getboard(self, url):
-        url = urllib.urlopen(url).read()
-        soup = BeautifulSoup(url)
+        url = requests.get((url))
+        soup = BeautifulSoup(url.text)
         title = soup.find("title")
         return str(title)[7:-8]
 
