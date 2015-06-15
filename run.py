@@ -13,4 +13,4 @@ while True:
             print()
             print(url)
             print(recent.getboard(url) + " " + " ".join(recent.getbody(url)))
-    sleep(5)
+    sleep(30)
