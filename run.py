@@ -8,7 +8,7 @@ while True:
     urls = recent.getrecent()
     for url in urls:
         if url not in seenurls:
-            print("unseen")
             seenurls.append(url)
-            print(" ".join(recent.getbody(url)))
+            print(url)
+            print(recent.getboard(url) + " " + " ".join(recent.getbody(url)))
     sleep(5)
